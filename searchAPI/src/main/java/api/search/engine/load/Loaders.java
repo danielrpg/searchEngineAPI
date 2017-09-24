@@ -1,7 +1,10 @@
 package api.search.engine.load;
 
+import api.search.engine.model.Persona;
 import api.search.engine.model.User;
+import api.search.engine.repository.PersonaRepository;
 import api.search.engine.repository.UserRepository;
+import api.search.engine.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.stereotype.Component;
@@ -23,12 +26,16 @@ public class Loaders {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    PersonaRepository personaRepository;
+
     @PostConstruct
     @Transactional
     public void loadAll(){
         operations.putMapping(User.class);
         System.out.println("Loading Data");
         userRepository.save(getData());
+        personaRepository.save(getPersonData());
         System.out.println("Loading Completed");
     }
 
@@ -40,5 +47,19 @@ public class Loaders {
         userList.add(new User("Juaquin", 1255L, "Demo4", 1054L));
         userList.add(new User("Demetrio", 1256L, "Demo5", 1055L));
         return userList;
+    }
+
+    private List<Persona> getPersonData(){
+        List<Persona> personaList = new ArrayList<>();
+
+        personaList.add(new Persona(1L, "Daniel", "Fernandez", "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500"));
+        personaList.add(new Persona(2L, "juan", "Fernandez", "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño."));
+        personaList.add(new Persona(3L, "Ariel", "Fernandez", "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500"));
+        personaList.add(new Persona(4L, "Juan", "Fernandez", "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño."));
+        personaList.add(new Persona(5L, "Pedro", "Fernandez", "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500"));
+        personaList.add(new Persona(6L, "Gonzalo", "Fernandez", "Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles"));
+        personaList.add(new Persona(7L, "Timoteo", "Fernandez", "El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados."));
+
+        return personaList;
     }
 }
