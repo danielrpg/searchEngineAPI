@@ -1,3 +1,4 @@
+  
   <mat-toolbar color="primary">
     <span>EDICTO</span>
 
@@ -8,17 +9,83 @@
     </button>
   </mat-toolbar>
   <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Option 1</button>
-    <button mat-menu-item>Option 2</button>
+    <button mat-menu-item>Usuario</button>
+    <button mat-menu-item>Salir</button>
   </mat-menu>
 
+
   <mat-card>
-      <mat-card-title>Buscar Edicto</mat-card-title>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Favorite food" value="Sushi">
-      </mat-form-field>
-    </form>    
+      <mat-card-title>Buscar Edictos</mat-card-title>
+      <mat-card-content>
+          <div class="example-container">
+              <mat-form-field>
+                <input matInput placeholder="Ingresar edicto" type="text">
+                <mat-icon ></mat-icon>
+              </mat-form-field>
+            
+          </div> 
+          <div class="button-row"> 
+              <button mat-raised-button color="primary">Buscar Edicto</button>
+          </div> 
+      </mat-card-content>
+  </mat-card>
+  <mat-card>
+      <mat-card-title>Edictos que coinciden</mat-card-title>
+      <mat-card-content>
+          <table>
+              <tr>
+                <td><strong>Edicto</strong></td>
+                <td><strong>Enlace</strong></td>
+                <td><strong>Fecha Publicacion</strong></td>
+                <td><strong>Periodico</strong></td>
+                <td><strong>PDF</strong></td>
+              </tr>
+               
+              <tr>
+                <td>Edicto1</td>
+                <td>enalce1 edito1</td>
+                <td>10/12/2017</td>
+                <td>Los Tiempo</td>
+                <td>PDF-edicto1</td>
+              </tr>
+               
+              <tr>
+                  <td>Edicto1</td>
+                  <td>enalce1 edito1</td>
+                  <td>10/12/2017</td>
+                  <td>Los Tiempo</td>
+                  <td>PDF-edicto1</td>
+                </tr>
+                <tr>
+                    <td>Edicto1</td>
+                    <td>enalce1 edito1</td>
+                    <td>10/12/2017</td>
+                    <td>Los Tiempo</td>
+                    <td>PDF-edicto1</td>
+                  </tr>
+                  <tr>
+                      <td>Edicto1</td>
+                      <td>enalce1 edito1</td>
+                      <td>10/12/2017</td>
+                      <td>Los Tiempo</td>
+                      <td>PDF-edicto1</td>
+                    </tr>
+                    <tr>
+                        <td>Edicto1</td>
+                        <td>enalce1 edito1</td>
+                        <td>10/12/2017</td>
+                        <td>Los Tiempo</td>
+                        <td>PDF-edicto1</td>
+                      </tr>
+                      <tr>
+                          <td>Edicto1</td>
+                          <td>enalce1 edito1</td>
+                          <td>10/12/2017</td>
+                          <td>Los Tiempo</td>
+                          <td>PDF-edicto1</td>
+                        </tr>
+              </table>
+      </mat-card-content>
   </mat-card>
 
   <span class="done">

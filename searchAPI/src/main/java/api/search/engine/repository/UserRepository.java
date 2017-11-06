@@ -9,9 +9,7 @@ import java.util.List;
 /**
  * @author dany
  */
-public interface UserRepository extends ElasticsearchRepository<User, Long> {
+public interface UserRepository extends ElasticsearchRepository<User, String> {
 
-    List<User> findByName(String text);
 
-    List<User> findBySalary(Long salary);
 }

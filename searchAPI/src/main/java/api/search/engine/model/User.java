@@ -2,26 +2,54 @@ package api.search.engine.model;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
+import javax.persistence.Id;
+
 /**
  * @author dany
  */
 @Document(indexName = "users", type = "users", shards = 1)
 public class User {
 
+    @Id
+    private String id;
+    private String userName;
+    private String password;
     private String name;
-    private Long id;
-    private String teamName;
-    private Long salary;
+    private String lastName;
 
     public User(){
 
     }
 
-    public User(String name, Long id, String teamName, Long salary) {
+    public User(String userName, String password, String name, String lastName) {
+        this.userName = userName;
+        this.password = password;
         this.name = name;
+        this.lastName = lastName;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
         this.id = id;
-        this.teamName = teamName;
-        this.salary = salary;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -32,27 +60,11 @@ public class User {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTeamName() {
-        return teamName;
-    }
-
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
-    }
-
-    public Long getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Long salary) {
-        this.salary = salary;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

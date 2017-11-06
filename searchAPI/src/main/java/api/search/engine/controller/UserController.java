@@ -2,40 +2,38 @@ package api.search.engine.controller;
 
 import api.search.engine.model.User;
 import api.search.engine.repository.UserRepository;
+import api.search.engine.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author dany
  */
 @RestController
-@RequestMapping(value = "/rest/search")
+@RequestMapping(value = "/rest/user")
 public class UserController {
 
     @Autowired
-    UserRepository userRepository;
+    private UserService userService;
 
-    @GetMapping(value = "/name/{text}")
-    public @ResponseBody List<User> searchName(@PathVariable final String text) {
-        return userRepository.findByName(text);
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
+    public @ResponseBody Map<String, Object> authenticate(@RequestBody User user) {
+        return userService.authenticateUser(user);
     }
 
 
-    @GetMapping(value = "/salary/{salary}")
-    public List<User> searchSalary(@PathVariable final Long salary) {
-        return userRepository.findBySalary(salary);
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public @ResponseBody List<User> searchAll() {
+        return userService.listUser();
     }
 
-
-    @GetMapping(value = "/all")
-    public List<User> searchAll() {
-        List<User> usersList = new ArrayList<>();
-        Iterable<User> userses = userRepository.findAll();
-        userses.forEach(usersList::add);
-        return usersList;
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody Map<String, Object> deleteUserById(@PathVariable("id") String id){
+        return userService.deleteUserById(id);
     }
 
 }
