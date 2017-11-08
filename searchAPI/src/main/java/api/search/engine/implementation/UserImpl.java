@@ -65,7 +65,7 @@ public class UserImpl implements UserService{
         List<User> userResult = elasticsearchTemplate.queryForList(build, User.class);
 
         if(null != userResult){
-            
+
         }
         return null;
     }
