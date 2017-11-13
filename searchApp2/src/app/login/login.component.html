@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="account-wall">
+        <h1 class="text-center login-title">Ingresar al sistema</h1>
+        <img class="profile-img" src="./assets/user.png" alt="">
+        <form class="form-signin" #formLogin="ngForm" (ngSubmit)="onSubmit()">
+          <input type="text" class="form-control" placeholder="Username" name="userName" #userName="ngModel" [(ngModel)]="user.userName" required>
+          <span *ngIf="userName.touched && !userName.valid">
+            <div class="alert alert-danger fade in">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <strong>Error!</strong> El campo no puede estar vacio.
+            </div>
+          </span>    
+          <br>
+          <input type="password" class="form-control" placeholder="Password" name="password" #password="ngModel" [(ngModel)]="user.password" required>
+          <span *ngIf="password.touched && !password.valid">
+              <div class="alert alert-danger fade in">
+                  <a href="#" class="close" data-dismiss="alert">&times;</a>
+                  <strong>Error!</strong> El campo no puede estar vacio.
+              </div>
+          </span>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Ingresar
+          </button>
+          <a href="#" class="pull-right need-help">Necesitas ayuda? </a><span class="clearfix"></span>
+        </form>
+      </div>
+      <a href="#" class="text-center new-account">Crear una cuenta</a>  
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+  <div class="row">
+  </div>
+</div>

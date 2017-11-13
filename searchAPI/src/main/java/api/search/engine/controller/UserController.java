@@ -1,27 +1,27 @@
 package api.search.engine.controller;
 
 import api.search.engine.model.User;
-import api.search.engine.repository.UserRepository;
 import api.search.engine.service.UserService;
+import api.search.engine.utility.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /**
- * @author dany
+ * @author dfernandez
  */
 @RestController
-@RequestMapping(value = "/rest/user")
+@RequestMapping(value = "/api/rest/v1")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-    public @ResponseBody Map<String, Object> authenticate(@RequestBody User user) {
+    @PostMapping(value = "/authenticate")
+    public @ResponseBody
+    Response authenticate(@RequestBody User user) {
         return userService.authenticateUser(user);
     }
 

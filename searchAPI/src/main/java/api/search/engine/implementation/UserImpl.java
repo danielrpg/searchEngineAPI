@@ -4,6 +4,7 @@ import api.search.engine.model.User;
 import api.search.engine.repository.UserRepository;
 import api.search.engine.service.UserService;
 import api.search.engine.utility.Response;
+import api.search.engine.utility.ResponseUser;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,7 +51,7 @@ public class UserImpl implements UserService{
     }
 
     @Override
-    public Map<String, Object> authenticateUser(User user) {
+    public Response authenticateUser(User user) {
         BoolQueryBuilder queryBuilder = QueryBuilders.boolQuery()
                 .should(
                         QueryBuilders.queryStringQuery(user.getUserName())
@@ -63,10 +64,14 @@ public class UserImpl implements UserService{
                 .withQuery(queryBuilder)
                 .build();
         List<User> userResult = elasticsearchTemplate.queryForList(build, User.class);
-
+        Response response = new Response();
         if(null != userResult){
-
+            response.setMessage("El usuario existe");
+            response.setSuccess(Boolean.TRUE);
+        }else{
+            response.setMessage("El usuario no existe");
+            response.setSuccess(Boolean.FALSE);
         }
-        return null;
+        return response;
     }
 }
