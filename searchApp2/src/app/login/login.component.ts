@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
                        if(response){
                          this.router.navigate(['/home']);
                        }else{
-                        
+                        this.router.navigate(['/login']);
                        }
                      });
                      
