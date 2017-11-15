@@ -9,3 +9,15 @@
 .navbar-default{
     border-color: #212a34;
 }
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    background-color: #9e3b3b;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+    background-color: #9e3b3b;
+}
+
+.navbar-default .navbar-brand{
+    color: #ffa32c;
+}

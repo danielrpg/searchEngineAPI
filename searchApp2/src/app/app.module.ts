@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { TextsearchComponent } from './home/textsearch/textsearch.component';
 import { TableresultComponent } from './home/tableresult/tableresult.component';
+import { AdvancedsearchComponent } from './home/advancedsearch/advancedsearch.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TableresultComponent } from './home/tableresult/tableresult.component';
     HomeComponent,
     NavbarComponent,
     TextsearchComponent,
-    TableresultComponent
+    TableresultComponent,
+    AdvancedsearchComponent
   ],
   imports: [
     BrowserModule,

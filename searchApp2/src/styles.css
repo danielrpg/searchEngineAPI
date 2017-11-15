@@ -9,3 +9,14 @@ body{
 .btn-group-lg > .btn, .btn-lg{
     font-size: 15px !important;
 }
+
+.btn-primary{
+    color: #fff;
+    background-color: #a94442;
+    border-color: #a94442;
+}
+
+.btn-primary:hover{
+    background-color: #a94442;
+    border-color: #a94442;
+}
