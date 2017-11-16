@@ -12,6 +12,8 @@ import { NavbarComponent } from './home/navbar/navbar.component';
 import { TextsearchComponent } from './home/textsearch/textsearch.component';
 import { TableresultComponent } from './home/tableresult/tableresult.component';
 import { AdvancedsearchComponent } from './home/advancedsearch/advancedsearch.component';
+import { AdvancedformComponent } from './home/advancedsearch/advancedform/advancedform.component';
+import { DetailedictComponent } from './home/detailedict/detailedict.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { AdvancedsearchComponent } from './home/advancedsearch/advancedsearch.co
     NavbarComponent,
     TextsearchComponent,
     TableresultComponent,
-    AdvancedsearchComponent
+    AdvancedsearchComponent,
+    AdvancedformComponent,
+    DetailedictComponent
   ],
   imports: [
     BrowserModule,

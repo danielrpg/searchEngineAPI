@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  public listEdicts:any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeListEdicts(event){
+    this.listEdicts = event;
   }
 
 }

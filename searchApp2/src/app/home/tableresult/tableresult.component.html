@@ -1,3 +1,4 @@
+<app-detailedict></app-detailedict>
 <div class="row">
     <div class="col-lg-12">
         <!-- Table -->
@@ -7,110 +8,30 @@
             <table class="table table-hover">
             <thead>
                 <tr>
-                <th>#</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
-                <th>Table heading</th>
+                  <th>Codigo</th>
+                  <th>Titulo</th>
+                  <th>Tipo</th>
+                  <th>Periodico</th>
+                  <th>Departamento</th>
+                  <th>Fecha</th>
+                  <th>Acciones</th>   
                 </tr>
             </thead>
             <tbody id="myTable">
-                <tr>
-                  <td>1</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
+                <tr *ngFor="let edict of listEdicts.edicts">
+                  <td>{{ edict.codeEdict }}</td>
+                  <td>{{ edict.titleEdict }}</td>
+                  <td>{{ edict.typeEdict }}</td>
+                  <td>{{ edict.departamentEdict }}</td>
+                  <td>{{ edict.newspaperEdict }}</td>
+                  <td>{{ edict.dateEdict }}</td>
+                  <td><a data-target="#detailEdictModal" >Detallar</a></td>
                 </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr class="success">
-                  <td>5</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                  <td>Table cell</td>
-                </tr>
+                
             </tbody>
             </table>   
         </div>
-        <div class="col-md-12 text-right">
+        <div class="col-md-12 text-center">
                 <ul class="pagination">
                     <li><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
