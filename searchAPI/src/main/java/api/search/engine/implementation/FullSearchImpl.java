@@ -1,6 +1,7 @@
 package api.search.engine.implementation;
 
 import api.search.engine.model.Edict;
+import api.search.engine.model.EdictDocument;
 import api.search.engine.model.User;
 import api.search.engine.service.FullSearchService;
 import org.elasticsearch.index.query.BoolQueryBuilder;
@@ -39,7 +40,7 @@ public class FullSearchImpl implements FullSearchService{
         NativeSearchQuery build = new NativeSearchQueryBuilder()
                 .withQuery(queryBuilder)
                 .build();
-        List<Edict> editResult = elasticsearchTemplate.queryForList(build, Edict.class);
+        List<EdictDocument> editResult = elasticsearchTemplate.queryForList(build, EdictDocument.class);
         Map<String, Object> resultEditList = new HashMap<>();
         resultEditList.put("edicts", editResult);
         return resultEditList;

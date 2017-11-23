@@ -1,80 +1,103 @@
 package api.search.engine.model;
 
-import org.springframework.data.elasticsearch.annotations.Document;
-
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * @author dfernandez
- * @date 11/15/2017.
+ * @date 11/19/2017.
  */
-/*
-    id_edict bigserial NOT NULL,
-  id_newspaper integer NOT NULL,
-  seqnumber_edict integer NOT NULL,
-  code_edict character varying(200) NOT NULL,
-  date_edict date NOT NULL,
-  title_edict character varying(200),
-  context_edict text NOT NULL,
-  context2_edict text,
-  context3_edict text,
-  context4_edict text,
-  context5_edict text,
-  type_edict integer NOT NULL,
-  num_face_edict integer NOT NULL,
-  observations_edict character varying(200),
-  file_edict character varying(400),
-  active_edict smallint NOT NULL,
-  user_up_edict character varying(100) NOT NULL,
-  date_up_edict timestamp(6) without time zone NOT NULL DEFAULT now(),
-  user_down_edict character varying(100),
-  date_down_edict timestamp(6) without time zone
- */
-@Document(indexName = "edicts", type = "edicts", shards = 1)
+@Entity(name = "edict")
+@Table(name = "edict")
 public class Edict {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id_edict")
+    private Long id;
+
+    @Column(name = "id_newspaper")
+    private Integer idNewspaper;
+
+    @Column(name = "seqnumber_edict")
+    private Integer seqNumberEdict;
+
+    @Column(name = "code_edict")
     private String codeEdict;
-    private String dateEdict;
+
+    @Column(name = "date_edict")
+    private Date dateEdict;
+
+    @Column(name = "title_edict")
     private String titleEdict;
+
+    @Column(name = "context_edict")
     private String contextEdict;
-    private String typeEdict;
+
+    @Column(name = "context2_edict")
+    private String getContextEdict2;
+
+    @Column(name = "context3_edict")
+    private String getContextEdict3;
+
+    @Column(name = "context4_edict")
+    private String getContextEdict4;
+
+    @Column(name = "context5_edict")
+    private String getContextEdict5;
+
+    @Column(name = "type_edict")
+    private Integer typeEdict;
+
+    @Column(name = "num_face_edict")
     private Integer numFaceEdict;
-    private String onservationEdict;
+
+    @Column(name = "observations_edict")
+    private String observationEdict;
+
+    @Column(name = "file_edict")
     private String fileEdict;
-    private String newspaperEdict;
-    private String departamentEdict;
+
+    @Column(name = "active_edict")
     private Integer activeEdict;
 
-    public Edict(){
+    @Column(name = "user_up_edict")
+    private String userUpEdict;
 
+    @Column(name = "date_up_edict")
+    private Date dateUpEdict;
+
+    @Column(name = "user_down_edict")
+    private String userDownEdict;
+
+    @Column(name = "date_down_edict")
+    private Date dateDownEdict;
+
+    public Edict() {
     }
 
-    public Edict(String codeEdict, String dateEdict, String titleEdict,
-                 String contextEdict, String typeEdict, Integer numFaceEdict,
-                 String onservationEdict, String fileEdict, String newspaperEdict,String departamentEdict, Integer activeEdict) {
-        this.id = id;
-        this.codeEdict = codeEdict;
-        this.dateEdict = dateEdict;
-        this.titleEdict = titleEdict;
-        this.contextEdict = contextEdict;
-        this.typeEdict = typeEdict;
-        this.numFaceEdict = numFaceEdict;
-        this.onservationEdict = onservationEdict;
-        this.fileEdict = fileEdict;
-        this.newspaperEdict = newspaperEdict;
-        this.departamentEdict = departamentEdict;
-        this.activeEdict = activeEdict;
-    }
-
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getIdNewspaper() {
+        return idNewspaper;
+    }
+
+    public void setIdNewspaper(Integer idNewspaper) {
+        this.idNewspaper = idNewspaper;
+    }
+
+    public Integer getSeqNumberEdict() {
+        return seqNumberEdict;
+    }
+
+    public void setSeqNumberEdict(Integer seqNumberEdict) {
+        this.seqNumberEdict = seqNumberEdict;
     }
 
     public String getCodeEdict() {
@@ -85,11 +108,11 @@ public class Edict {
         this.codeEdict = codeEdict;
     }
 
-    public String getDateEdict() {
+    public Date getDateEdict() {
         return dateEdict;
     }
 
-    public void setDateEdict(String dateEdict) {
+    public void setDateEdict(Date dateEdict) {
         this.dateEdict = dateEdict;
     }
 
@@ -109,11 +132,43 @@ public class Edict {
         this.contextEdict = contextEdict;
     }
 
-    public String getTypeEdict() {
+    public String getGetContextEdict2() {
+        return getContextEdict2;
+    }
+
+    public void setGetContextEdict2(String getContextEdict2) {
+        this.getContextEdict2 = getContextEdict2;
+    }
+
+    public String getGetContextEdict3() {
+        return getContextEdict3;
+    }
+
+    public void setGetContextEdict3(String getContextEdict3) {
+        this.getContextEdict3 = getContextEdict3;
+    }
+
+    public String getGetContextEdict4() {
+        return getContextEdict4;
+    }
+
+    public void setGetContextEdict4(String getContextEdict4) {
+        this.getContextEdict4 = getContextEdict4;
+    }
+
+    public String getGetContextEdict5() {
+        return getContextEdict5;
+    }
+
+    public void setGetContextEdict5(String getContextEdict5) {
+        this.getContextEdict5 = getContextEdict5;
+    }
+
+    public Integer getTypeEdict() {
         return typeEdict;
     }
 
-    public void setTypeEdict(String typeEdict) {
+    public void setTypeEdict(Integer typeEdict) {
         this.typeEdict = typeEdict;
     }
 
@@ -125,12 +180,12 @@ public class Edict {
         this.numFaceEdict = numFaceEdict;
     }
 
-    public String getOnservationEdict() {
-        return onservationEdict;
+    public String getObservationEdict() {
+        return observationEdict;
     }
 
-    public void setOnservationEdict(String onservationEdict) {
-        this.onservationEdict = onservationEdict;
+    public void setObservationEdict(String observationEdict) {
+        this.observationEdict = observationEdict;
     }
 
     public String getFileEdict() {
@@ -141,27 +196,43 @@ public class Edict {
         this.fileEdict = fileEdict;
     }
 
-    public String getNewspaperEdict() {
-        return newspaperEdict;
-    }
-
-    public void setNewspaperEdict(String newspaperEdict) {
-        this.newspaperEdict = newspaperEdict;
-    }
-
-    public String getDepartamentEdict() {
-        return departamentEdict;
-    }
-
-    public void setDepartamentEdict(String departamentEdict) {
-        this.departamentEdict = departamentEdict;
-    }
-
     public Integer getActiveEdict() {
         return activeEdict;
     }
 
     public void setActiveEdict(Integer activeEdict) {
         this.activeEdict = activeEdict;
+    }
+
+    public String getUserUpEdict() {
+        return userUpEdict;
+    }
+
+    public void setUserUpEdict(String userUpEdict) {
+        this.userUpEdict = userUpEdict;
+    }
+
+    public Date getDateUpEdict() {
+        return dateUpEdict;
+    }
+
+    public void setDateUpEdict(Date dateUpEdict) {
+        this.dateUpEdict = dateUpEdict;
+    }
+
+    public String getUserDownEdict() {
+        return userDownEdict;
+    }
+
+    public void setUserDownEdict(String userDownEdict) {
+        this.userDownEdict = userDownEdict;
+    }
+
+    public Date getDateDownEdict() {
+        return dateDownEdict;
+    }
+
+    public void setDateDownEdict(Date dateDownEdict) {
+        this.dateDownEdict = dateDownEdict;
     }
 }

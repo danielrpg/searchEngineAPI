@@ -1,11 +1,13 @@
 package api.search.engine.repository;
 
 import api.search.engine.model.Edict;
-import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author dfernandez
- * @date 11/15/2017.
+ * @date 11/19/2017.
  */
-public interface EdictRepository extends ElasticsearchRepository<Edict, String> {
+@Repository
+public interface EdictRepository extends JpaRepository<Edict, Long>{
 }
