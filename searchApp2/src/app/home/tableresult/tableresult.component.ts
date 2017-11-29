@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+;
 
 import { Edict } from '../../models/Edict';
 
@@ -14,18 +15,13 @@ export class TableresultComponent implements OnInit {
 
   @Input() listEdicts:any;
   
-  public edicts : Array<Edict> = [
-    { title:"Edicto 001", context:"contexto", date:"12-11-2017" },
-    { title:"Edicto 001", context:"contexto", date:"12-11-2017" }
-  ];
+  public edicts : Array<Edict> = [];
   
-  constructor() {
+  constructor( ) {
     
   }
 
   detailEdict(edict:any){
-    console.log(edict);
-    $('#detailEdictModal').open();
   }
 
 

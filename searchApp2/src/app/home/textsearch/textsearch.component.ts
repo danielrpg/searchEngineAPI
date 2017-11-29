@@ -22,7 +22,6 @@ export class TextsearchComponent implements OnInit {
   searchText(){
     this.searchService.searchTextService(this.searchQuery)
                       .then(response => {
-                          console.log(response);
                           this.change.emit(response);
                       });
   }

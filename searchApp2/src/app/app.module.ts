@@ -31,7 +31,8 @@ import { DetailedictComponent } from './home/detailedict/detailedict.component';
     BrowserModule,
     HttpModule,
     FormsModule,
-    routing
+    routing,
+
   ],
   providers: [
     appRoutingProviders

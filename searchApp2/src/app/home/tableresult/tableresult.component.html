@@ -17,7 +17,7 @@
                   <th>Acciones</th>   
                 </tr>
             </thead>
-            <tbody id="myTable">
+            <tbody id="myTable" *ngIf="listEdicts">
                 <tr *ngFor="let edict of listEdicts.edicts">
                   <td>{{ edict.codeEdict }}</td>
                   <td>{{ edict.titleEdict }}</td>
@@ -27,9 +27,19 @@
                   <td>{{ edict.dateEdict }}</td>
                   <td><a data-target="#detailEdictModal" >Detallar</a></td>
                 </tr>
-                
             </tbody>
-            </table>   
+            <tbody id="myTable" *ngIf="!listEdicts">
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+            </tbody>
+          </table>   
         </div>
         <div class="col-md-12 text-center">
                 <ul class="pagination">

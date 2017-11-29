@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeListEdicts(event){
+  changeListEdicts(event) {
     this.listEdicts = event;
   }
 
