@@ -17,4 +17,7 @@ public interface GeneralParameterRepository extends JpaRepository<GeneralParamet
 
     @Query("select g from general_parameters g where gral_param_pro_sigla=:codeGeneralParam")
     List<GeneralParameter> finGeneralParameterByCode(@Param("codeGeneralParam") String codeGeneralParam);
+
+    @Query("select g from general_parameters g where gral_param_pro_grp=:generalParamGRP")
+    List<GeneralParameter> finDepartamentByCode(@Param("generalParamGRP") Integer generalParamGRP);
 }

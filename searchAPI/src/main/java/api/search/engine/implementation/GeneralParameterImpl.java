@@ -23,4 +23,11 @@ public class GeneralParameterImpl implements GeneralParameterService {
         List<GeneralParameter> generalParams = generalParameterRepository.finGeneralParameterByCode(codeParam);
         return generalParams.get(0).getGralParamDescription();
     }
+
+    @Override
+    public List<GeneralParameter> finDepartamentByCode(Integer codeParamGRP) {
+        return generalParameterRepository.finDepartamentByCode(codeParamGRP);
+    }
+
+
 }

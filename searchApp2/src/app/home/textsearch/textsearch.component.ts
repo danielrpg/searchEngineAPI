@@ -10,16 +10,16 @@ import { SearchQuery } from '../../models/SearchQuery';
   providers : [SearchService]
 })
 export class TextsearchComponent implements OnInit {
-  public searchQuery : SearchQuery;
-  
+  public searchQuery: SearchQuery;
+
   @Output('updateTable')
   change: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private searchService:SearchService) {
+  constructor(private searchService: SearchService) {
     this.searchQuery = new SearchQuery("");
   }
 
-  searchText(){
+  searchText() {
     this.searchService.searchTextService(this.searchQuery)
                       .then(response => {
                           this.change.emit(response);

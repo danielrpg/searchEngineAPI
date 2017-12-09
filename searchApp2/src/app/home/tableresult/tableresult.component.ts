@@ -13,20 +13,18 @@ declare var $:any;
 })
 export class TableresultComponent implements OnInit {
 
-  @Input() listEdicts:any;
-  
-  public edicts : Array<Edict> = [];
-  
+  @Input() listEdicts: any;
+
+  public edicts: Array<Edict> = [];
+
   constructor( ) {
-    
   }
 
-  detailEdict(edict:any){
+  detailEdict(edict: any){
   }
-
 
   ngOnInit() {
-   
+
   }
 
 }

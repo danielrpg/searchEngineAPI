@@ -2,28 +2,24 @@
 <div class="row">
     <div class="col-lg-12">
         <!-- Table -->
-        <h2>Lista de resultados</h2>
-        <p>Esta es la lista de resultados de la busqueda de edictos:</p>            
+        <h2><img src="./assets/icons/list_small.png"> Lista de resultados</h2>
+        <p>Esta es la lista de resultados de la busqueda de edictos:</p>
         <div class="table-responsive">
             <table class="table table-hover">
             <thead>
                 <tr>
-                  <th>Codigo</th>
-                  <th>Titulo</th>
-                  <th>Tipo</th>
-                  <th>Periodico</th>
-                  <th>Departamento</th>
-                  <th>Fecha</th>
-                  <th>Acciones</th>   
+                  <th><span class="glyphicon glyphicon-subtitles" aria-hidden="true"></span> CODIGO</th>
+                  <th><span class="glyphicon glyphicon-book" aria-hidden="true"></span> PERIODICO</th>
+                  <th><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> DEPARTAMENTO</th>
+                  <th><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> FECHA</th>
+                  <th><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> ACCIONES</th>
                 </tr>
             </thead>
             <tbody id="myTable" *ngIf="listEdicts">
                 <tr *ngFor="let edict of listEdicts.edicts">
                   <td>{{ edict.codeEdict }}</td>
-                  <td>{{ edict.titleEdict }}</td>
-                  <td>{{ edict.typeEdict }}</td>
-                  <td>{{ edict.departamentEdict }}</td>
                   <td>{{ edict.newspaperEdict }}</td>
+                  <td>{{ edict.departamentEdict }}</td>
                   <td>{{ edict.dateEdict }}</td>
                   <td><a data-target="#detailEdictModal" >Detallar</a></td>
                 </tr>
@@ -39,7 +35,7 @@
                       <td></td>
                     </tr>
             </tbody>
-          </table>   
+          </table>
         </div>
         <div class="col-md-12 text-center">
                 <ul class="pagination">
@@ -48,8 +44,8 @@
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
-                </ul> 
+                </ul>
         </div>
     </div>
-    
+
 </div>

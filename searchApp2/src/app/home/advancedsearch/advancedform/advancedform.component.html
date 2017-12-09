@@ -1,31 +1,14 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon1">Nombres</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+      <span class="input-group-addon">NOMBRE(S) Y APELLIDO(S)</span>
+      <input type="text" class="form-control" [(ngModel)]= "advancedSearchQuery.nameQuery" placeholder="Nombres y appellidos..." aria-describedby="sizing-addon1">
     </div>
   </div>
   <div class="col-lg-6">
     <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon1">Apellidos</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-    </div>
-  </div>
-</div>
-<div class="row">
-  <br>
-</div>
-<div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon1">Carnet Identidad</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
-    </div>
-  </div>
-  <div class="col-lg-6">
-    <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon1">Celular</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+      <span class="input-group-addon">CARNET DE IDENTIDAD</span>
+      <input type="text" class="form-control" placeholder="Carnet de identidad..." [(ngModel)]= "advancedSearchQuery.ciQuery" aria-describedby="sizing-addon1">
     </div>
   </div>
 </div>
@@ -35,14 +18,43 @@
 <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon1">Periodico</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+      <span class="input-group-addon" id="sizing-addon1" >DEPARTAMENTO</span>
+      <select class="form-control" [(ngModel)]= "advancedSearchQuery.departamentQuery">
+        <option>BENI</option>
+        <option>COCHABAMBA</option>
+        <option>CHUQUISACA</option>
+        <option>SANTA CRUZ</option>
+        <option>LA PAZ</option>
+        <option>ORURO</option>
+        <option>PANDO</option>
+        <option>POTOSI</option>
+        <option>TARIJA</option>
+      </select>
     </div>
   </div>
   <div class="col-lg-6">
     <div class="input-group">
-      <span class="input-group-addon" id="sizing-addon1">Ciudad</span>
-      <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1">
+      <span class="input-group-addon" id="sizing-addon1">PERIODICO</span>
+      <select class="form-control" [(ngModel)]= "advancedSearchQuery.newspaperQuery">
+        <option *ngFor="let newspaper of newspapers">{{newspaper}}</option>
+      </select>
     </div>
+  </div>
+
+</div>
+<div class="row">
+  <br>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon1">DIRECCION</span>
+      <input type="text" class="form-control" placeholder="Direccion.." aria-describedby="sizing-addon1" [(ngModel)]= "advancedSearchQuery.addressQuery">
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <button type="button" class="btn btn-primary" (click)="searchAdvanced()">
+      <span class="glyphicon glyphicon-search" aria-hidden="true"></span> BUSQUEDA AVANZADA
+    </button>
   </div>
 </div>

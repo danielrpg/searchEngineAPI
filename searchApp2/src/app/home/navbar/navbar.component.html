@@ -4,10 +4,10 @@
       <a class="navbar-brand" href="#">INFO EDICTOS</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Inicio</a></li>
-      <li><a href="#">Advanzado</a></li>
-      <li><a href="#">Historico</a></li>
-     
+      <li><a [routerLink]="['/home']">Inicio</a></li>
+      <li><a [routerLink]="['/advancedsearch']">Advanzado</a></li>
+      <li><a [routerLink]="['/history']">Historico</a></li>
+
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -21,5 +21,5 @@
         </li>
       </ul>
   </div>
-  
+
 </nav>

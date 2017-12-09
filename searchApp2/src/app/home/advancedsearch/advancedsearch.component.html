@@ -4,11 +4,11 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3> <img src="./assets/icons/search_big.png" width="50"> Buscador Avanzado </h3>
+                    <h3> <img src="./assets/icons/search_big.png" width="50"> BUSCADOR AVANZADO </h3>
                 </div>
                 <div class="panel-body">
-                    <app-advancedform></app-advancedform>
-                    <app-tableresult></app-tableresult>
+                    <app-advancedform (updateTable)="changeListEdicts($event)"></app-advancedform>
+                    <app-tableresult [listEdicts]="listEdicts"></app-tableresult>
                 </div>
             </div>
         </div>
